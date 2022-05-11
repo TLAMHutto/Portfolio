@@ -19,6 +19,19 @@ camera.position.setX(-3);
 
 renderer.render(scene, camera);
 
+
+window.addEventListener( 'resize', onWindowResize, false );
+
+function onWindowResize(){
+
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+
+    renderer.setSize( window.innerWidth, window.innerHeight );
+
+}
+
+
 // Lights
 
 const pointLight = new THREE.PointLight(0xffffff);
@@ -34,6 +47,7 @@ scene.add(pointLight, ambientLight);
 // const renderer = new THREE.WebGLRenderer();
 // renderer.shadowMap.enabled = true;
 // renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
 
 
 
@@ -53,10 +67,7 @@ function addStar() {
 Array(700).fill().forEach(addStar);
 
 // Background
-window.onresize = window.onload = function() {
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  camera.aspect = window.innerWidth / window.innerHeight;
-}
+
 const spaceTexture = new THREE.TextureLoader().load('./imgs/space_bg.jpeg');
 scene.background = spaceTexture;
 // Sun

@@ -1,4 +1,4 @@
-
+@import 'animation.css';
 canvas {
   position: fixed;
   top: 0;
@@ -8,10 +8,10 @@ canvas {
 :root {
   --dark-bg: rgba(15, 15, 15, 0.95);
   --spacing: 350px;
-
-  font-family: brandon-grotesque, sans-serif;
-  font-weight: 400;
-  font-style: normal;
+  --nav-bar-color: rgb(205, 2, 2);
+  --title-bg: rgba(255, 255, 255, 0.486);
+  --title-text: rgb(252, 162, 17);
+  --nav-button-glow: red
 }
 body{
   height: 900rem;
@@ -41,4 +41,20 @@ main {
 }
 .title{
   font-family: 'Raleway', sans-serif;
+  background-color: var(--title-bg);
+  color: var(--title-text);
+  font-weight: 7000;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px 3px;
+  padding: .2em;
+  line-height: 50px;
+  letter-spacing: 3px;
+  animation: zoomIn 3s;
+}
+
+.navbar-inverse .navbar-toggle .icon-bar {
+  background-color: var(--nav-bar-color);
+}
+.navbar-toggle{
+  animation: navButtonAni 3s infinite;
 }
