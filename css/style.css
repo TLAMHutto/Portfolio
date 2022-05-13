@@ -1,4 +1,5 @@
 @import 'animation.css';
+@import 'media.css';
 canvas {
   position: fixed;
   top: 0;
@@ -8,10 +9,11 @@ canvas {
 :root {
   --dark-bg: rgba(15, 15, 15, 0.95);
   --spacing: 350px;
-  --nav-bar-color: rgb(205, 2, 2);
-  --title-bg: rgba(255, 255, 255, 0.486);
-  --title-text: rgb(252, 162, 17);
-  --nav-button-glow: red
+  --nav-bar-color: rgba(2, 97, 205, 0.581);
+  --title-bg: rgba(9,8,52, 0.77);
+  --title-text: rgb(252,163,17);
+  --nav-button-glow: rgb(252,163,17);
+  --text-shadow-light: rgb(255, 255, 255);
 }
 body{
   height: 900rem;
@@ -43,6 +45,7 @@ main {
   font-family: 'Raleway', sans-serif;
   background-color: var(--title-bg);
   color: var(--title-text);
+  text-shadow: 2px 2px 8px var(--text-shadow-light);
   font-weight: 7000;
   border-radius: 10px;
   box-shadow: 3px 3px 3px 3px;
@@ -50,11 +53,32 @@ main {
   line-height: 50px;
   letter-spacing: 3px;
   animation: zoomIn 3s;
+  margin-left: 2rem;
 }
-
-.navbar-inverse .navbar-toggle .icon-bar {
-  background-color: var(--nav-bar-color);
+.dropdown-menu{
+  background-color: var(--title-bg);
+  
 }
-.navbar-toggle{
+.dropdown{
+  position: fixed;
+  top:0;
+  right:0;
+  margin-top: 10px;
+  margin-right: 10px;
+  
+}
+.btn{
+  background-color: var(--title-bg);
   animation: navButtonAni 3s infinite;
+  
+}
+.btn:hover{
+  transform: scale(1.1);
+}
+.bar{
+  width: 25px;
+  height: 5px;
+  background-color: var(--title-text);
+  margin: 2px 0;
+  
 }
